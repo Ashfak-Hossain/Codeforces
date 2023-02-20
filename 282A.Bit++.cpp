@@ -7,12 +7,27 @@ using namespace std;
 int main()
 {
 
-ios_base::sync_with_stdio(false);
-cin.tie(NULL), cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL), cout.tie(NULL);
 
-// Code Start From Here
+    // Code Start From Here
 
+    int n, x(0);
+    cin >> n;
 
+    string s;
 
-return 0;
+    while (n--)
+    {
+        cin >> s;
+
+        if (s[1] == '+')
+            ++x;
+        else
+            --x;
+    }
+
+    cout << x << endl;
+
+    return 0;
 }
