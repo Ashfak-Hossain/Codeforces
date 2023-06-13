@@ -174,7 +174,29 @@ void _print(const Head &H, const Tail &...T)
 
 void solve()
 {
-    
+    string s;
+
+    cin >> s;
+
+    vector<int> v;
+
+    for (int i = 0; i < sz(s); ++i)
+    {
+        if (s[i] != '+')
+        {
+            s[i] -= '0';
+            v.pb(s[i]);
+        }
+    }
+
+    sort(all(v));
+
+    cout << v[0];
+
+    for (int i = 1; i < v.size(); ++i)
+    {
+        cout << '+' << v[i];
+    }
 }
 
 int main()
