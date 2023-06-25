@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    int a, b, c;
+    long long a, b, c;
 
     char x, y;
 
