@@ -39,32 +39,17 @@ const ld EPS = 1e-9;
 void solve()
 {
 
-    int n;
+    long n;
     cin >> n;
-
-    vi v;
-
-    for (int i = n; i > 0; i--)
+    long start = 1;
+    if (n % 2)
     {
-        v.push_back(i);
+        start = 4;
+        cout << "3 1 2 ";
     }
-
-    debug(v);
-
-    for (int i = 0; i < n; i++)
+    for (long p = start; p < n; p += 2)
     {
-        if (v[i] == i + 1)
-        {
-            debug(v[i]);
-            swap(v[i], v[i + 1]);
-        }
-    }
-
-    debug(v);
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << v[i] << " ";
+        cout << p + 1 << " " << p << " ";
     }
     cout << endl;
 }
