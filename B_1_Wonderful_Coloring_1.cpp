@@ -36,35 +36,24 @@ const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
 
+const int L = 26;
+int cnt[L];
+
 void solve()
 {
-
     string s;
     cin >> s;
-
-    int cnt[26];
-
     memset(cnt, 0, sizeof(cnt));
-
     for (auto c : s)
         cnt[c - 'a']++;
-
-    int cnt1(0);
-    int cnt2(0);
-
-    for (int i = 0; i < 26; ++i)
-    {
+    int cnt1 = 0;
+    int cnt2 = 0;
+    for (int i = 0; i < L; i++)
         if (cnt[i] == 1)
-        {
             cnt1++;
-        }
         else if (cnt[i] > 0)
-        {
             cnt2++;
-        }
-    }
-
-    cout << (cnt1 + cnt2 / 2) << endl;
+    cout << (cnt2 + cnt1 / 2) << endl;
 }
 
 int main()
