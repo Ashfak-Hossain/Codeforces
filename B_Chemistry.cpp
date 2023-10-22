@@ -61,36 +61,24 @@ bool canFormPalindrome(string s, int k, int n)
 {
     unordered_map<char, int> freq;
     for (char c : s)
-    {
         freq[c]++;
-    }
 
     int oddCount = 0;
     for (auto it : freq)
-    {
         if (it.second % 2 != 0)
-        {
             oddCount++;
-        }
-    }
 
     debug(freq);
     debug(oddCount);
 
     if (n < k)
-    {
-        return false; // Impossible to remove k characters from the string
-    }
+        return false;
 
     if (oddCount - k == 1)
-    {
         return true;
-    }
 
     if (oddCount > k)
-    {
-        return false; // Impossible to form a palindrome even after removing k characters
-    }
+        return false;
 
     return true;
 }
