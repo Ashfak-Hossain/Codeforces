@@ -51,7 +51,7 @@ const ld EPS = 1e-9;
 void solve()
 {
 
-    int n, p;
+    ll n, p;
     cin >> n >> p;
 
     vpi v(n);
@@ -61,12 +61,12 @@ void solve()
 
     sort(all(v));
 
-    int ans = 0;
+    ll ans = 0;
 
     ans += p;
 
-    int l = 0;
-    int r = 1;
+    ll l = 0;
+    ll r = 1;
 
     while (r < n)
     {
