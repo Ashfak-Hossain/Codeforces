@@ -89,6 +89,10 @@ void solve()
     }
 
     debug(ans);
+
+    range(i, ans) cout << i << " ";
+
+    cout << endl;
 }
 
 int main()
