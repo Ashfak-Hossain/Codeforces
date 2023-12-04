@@ -66,12 +66,12 @@ void Free_Palestine()
             {
                 continue;
             }
-            puts("YES");
+            cout << "YES" << endl;
             cout << x << ' ' << y << ' ' << z << endl;
             return;
         }
     }
-    puts("NO");
+    cout << "No" << endl;
 }
 
 int main()
