@@ -1,7 +1,7 @@
 /**
  *        Bismillahir Rahmanir Rahim
  *        Author:  Ashfak Hossain Evan, American International University, Bangladesh
- *        Created: 22/12/2023 09:17:50
+ *        Created: 25/12/2023 23:49:19
  **/
 #include <bits/stdc++.h>
 
@@ -48,11 +48,29 @@ const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
 
+int min_divisor(int n)
+{
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0)
+            return i;
+    return n;
+}
+
 void Free_Palestine()
 {
-    
-    
+    int l, r;
+    cin >> l >> r;
 
+    for (int i = l; i <= r; i++)
+    {
+        int mid = min_divisor(i);
+        if (mid != i)
+        {
+            cout << mid << " " << i - mid << endl;
+            return;
+        }
+    }
+    cout << -1 << endl;
 }
 
 int main()
@@ -60,7 +78,8 @@ int main()
     Muichiro Tokito
 
 #ifdef BERLIN
-        freopen("input.txt", "r", stdin);
+        clock_t tStart = clock();
+    freopen("input.txt", "r", stdin);
     freopen("error.txt", "w", stderr);
     freopen("output.txt", "w", stdout);
 #endif
@@ -70,5 +89,8 @@ int main()
     while (_--)
         Free_Palestine();
 
+#ifdef BERLIN
+    fprintf(stderr, "Runtime: %.10fs", (double)(clock() - tStart) / CLOCKS_PER_SEC);
+#endif
     return 0;
 }
